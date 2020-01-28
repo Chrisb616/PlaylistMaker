@@ -13,6 +13,15 @@
 		1358167C23E0657300109133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1358167A23E0657300109133 /* Main.storyboard */; };
 		1358167E23E0657600109133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1358167D23E0657600109133 /* Assets.xcassets */; };
 		1358168123E0657600109133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1358167F23E0657600109133 /* LaunchScreen.storyboard */; };
+		1358168B23E0660700109133 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358168A23E0660700109133 /* APIClient.swift */; };
+		1358168D23E0661D00109133 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358168C23E0661D00109133 /* Keys.swift */; };
+		1358169523E066B000109133 /* TrackDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358168F23E066B000109133 /* TrackDate.swift */; };
+		1358169623E066B000109133 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169023E066B000109133 /* Track.swift */; };
+		1358169723E066B000109133 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169123E066B000109133 /* Album.swift */; };
+		1358169823E066B000109133 /* RecentTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169223E066B000109133 /* RecentTracksResponse.swift */; };
+		1358169923E066B000109133 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169323E066B000109133 /* Artist.swift */; };
+		1358169A23E066B000109133 /* RecentTracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169423E066B000109133 /* RecentTracks.swift */; };
+		1358169E23E0672F00109133 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169D23E0672F00109133 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		1358167D23E0657600109133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1358168023E0657600109133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1358168223E0657600109133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1358168A23E0660700109133 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		1358168C23E0661D00109133 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		1358168F23E066B000109133 /* TrackDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackDate.swift; sourceTree = "<group>"; };
+		1358169023E066B000109133 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		1358169123E066B000109133 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		1358169223E066B000109133 /* RecentTracksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTracksResponse.swift; sourceTree = "<group>"; };
+		1358169323E066B000109133 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		1358169423E066B000109133 /* RecentTracks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTracks.swift; sourceTree = "<group>"; };
+		1358169D23E0672F00109133 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,10 @@
 		1358167323E0657300109133 /* PlaylistMaker */ = {
 			isa = PBXGroup;
 			children = (
+				1358169C23E0671C00109133 /* Extensions */,
+				1358168E23E0669F00109133 /* Model */,
+				1358168C23E0661D00109133 /* Keys.swift */,
+				1358168A23E0660700109133 /* APIClient.swift */,
 				1358167423E0657300109133 /* AppDelegate.swift */,
 				1358167623E0657300109133 /* SceneDelegate.swift */,
 				1358167823E0657300109133 /* ViewController.swift */,
@@ -65,6 +87,27 @@
 				1358168223E0657600109133 /* Info.plist */,
 			);
 			path = PlaylistMaker;
+			sourceTree = "<group>";
+		};
+		1358168E23E0669F00109133 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1358169123E066B000109133 /* Album.swift */,
+				1358169323E066B000109133 /* Artist.swift */,
+				1358169423E066B000109133 /* RecentTracks.swift */,
+				1358169223E066B000109133 /* RecentTracksResponse.swift */,
+				1358169023E066B000109133 /* Track.swift */,
+				1358168F23E066B000109133 /* TrackDate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1358169C23E0671C00109133 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1358169D23E0672F00109133 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +182,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1358167923E0657300109133 /* ViewController.swift in Sources */,
+				1358169523E066B000109133 /* TrackDate.swift in Sources */,
 				1358167523E0657300109133 /* AppDelegate.swift in Sources */,
 				1358167723E0657300109133 /* SceneDelegate.swift in Sources */,
+				1358169823E066B000109133 /* RecentTracksResponse.swift in Sources */,
+				1358168B23E0660700109133 /* APIClient.swift in Sources */,
+				1358169A23E066B000109133 /* RecentTracks.swift in Sources */,
+				1358169E23E0672F00109133 /* Date.swift in Sources */,
+				1358168D23E0661D00109133 /* Keys.swift in Sources */,
+				1358169623E066B000109133 /* Track.swift in Sources */,
+				1358169923E066B000109133 /* Artist.swift in Sources */,
+				1358169723E066B000109133 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
