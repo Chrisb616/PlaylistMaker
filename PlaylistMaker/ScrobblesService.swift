@@ -62,7 +62,6 @@ class ScrobblesService {
                 }
             }
         }
-        
     }
     
     func allTracksForDate(year: Int, month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
@@ -71,14 +70,21 @@ class ScrobblesService {
         }
     }
     
-    func allTracksForDateRangeAllYears(month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
+    /**
+     Find all tracks for given date range, repeated every year. Note that if the date provide for start is later than the year provided for end, this method will consider the date range stretching over the new year.
+     */
+    func allTracksForDateRangeAllYears(startMonth: Int, startDay: Int, endMonth: Int, endDay: Int, completion: @escaping ([Track], String?)->()) {
+        let rangeCoversNewYear: Bool = startMonth > endMonth || (startMonth == endMonth && startDay > endDay)
+        
         var allTracks = [Track]()
         
         let allYears = Factbook.allYears
         var completedYears = [Int]()
         
         for year in allYears {
-            allTracksForDate(year: year, month: month, day: day) { (tracks, errorString) in
+            let endYear = rangeCoversNewYear ? year + 1 : year
+            
+            allTracksForDateRange(startYear: year, startMonth: startMonth, startDay: startDay, endYear: endYear, endMonth: endMonth, endDay: endDay) { (tracks, errorString) in
                 
                 DispatchQueue.main.async {
                     allTracks.append(contentsOf: tracks)
