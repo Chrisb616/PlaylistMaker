@@ -17,7 +17,7 @@ class ScrobblesService {
         
         guard
             let startDate = Date.fromComponents(year: year, month: month, day: 1, hour: 0, minute: 0, second: 0),
-            let endDate = Date.fromComponents(year: year, month: month, day: Factbook.totalDaysFor(month: month), hour: 23, minute: 59, second: 59)
+            let endDate = Date.fromComponents(year: year, month: month, day: Factbook.totalDaysFor(month: month, year: year), hour: 23, minute: 59, second: 59)
         else {
             completion([],"Invalid Date")
             return
@@ -41,7 +41,7 @@ class ScrobblesService {
     func allTracksForDateAllYears(month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
         var allTracks = [Track]()
         
-        let allYears: [Int] = Array(2002...Date().year)
+        let allYears = Factbook.allYears
         var completedYears = [Int]()
         
         for year in allYears {
