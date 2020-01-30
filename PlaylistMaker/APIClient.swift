@@ -80,7 +80,7 @@ class APIClient {
             do {
                 
                 let recentTracksResponse = try JSONDecoder().decode(RecentTracksResponse.self, from: data)
-                var newProgress = [RecentTracksResponse]()
+                var newProgress = progress
                 newProgress.append(recentTracksResponse)
                 
                 guard let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:[String:Any]] else {
@@ -119,7 +119,7 @@ class APIClient {
                     completion(newProgress, nil)
                 } else {
                     self.getRecentTracksRecursive(startDate, to: endDate, currentPage: currentPage + 1, progress: newProgress) { (finalProgress, nil) in
-                        completion(newProgress, nil)
+                        completion(finalProgress, nil)
                     }
                 }
                 
