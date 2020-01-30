@@ -29,7 +29,7 @@ class APIClient {
             paramString += "&\(param.key)=\(param.value)"
         }
         
-        print("Request Endpoint: \(url.absoluteString + paramString)")
+        print("Request Endpoint: \(url.absoluteString + "?" + paramString)")
         
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
