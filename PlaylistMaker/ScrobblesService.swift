@@ -13,6 +13,31 @@ class ScrobblesService {
     static let instance = ScrobblesService()
     private init(){}
     
+    func allTracksForMonth(year: Int, month: Int, completion: @escaping ([Track], String?)->()) {
+        
+        guard
+            let startDate = Date.fromComponents(year: year, month: month, day: 1, hour: 0, minute: 0, second: 0),
+            let endDate = Date.fromComponents(year: year, month: month, day: Factbook.totalDaysFor(month: month), hour: 23, minute: 59, second: 59)
+        else {
+            completion([],"Invalid Date")
+            return
+        }
+        
+        APIClient.instance.getRecentTracksfrom(startDate, to: endDate) { (responses, errorString) in
+            var allTracks = [Track]()
+            
+            for response in responses {
+                if let tracks = response.recenttracks?.track {
+                    let filteredTracks = tracks.filter { $0.date != nil }
+                    allTracks.append(contentsOf: filteredTracks)
+                }
+            }
+            
+            completion(allTracks, nil)
+        }
+        
+    }
+    
     func allTracksForDateAllYears(month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
         var allTracks = [Track]()
         
