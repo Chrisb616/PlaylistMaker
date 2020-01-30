@@ -19,6 +19,8 @@ class Catalog {
     private var _artists = [String:CatalogArtist]()
     var artists: [String:CatalogArtist] { return _artists }
     
+    var totalScrobbles: Int { return _scrobbles.count }
+    
     init(scrobbles: [Track]) {
         _scrobbles = scrobbles
         
