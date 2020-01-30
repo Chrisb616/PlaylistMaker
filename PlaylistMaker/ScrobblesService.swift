@@ -13,6 +13,28 @@ class ScrobblesService {
     static let instance = ScrobblesService()
     private init(){}
     
+    func allTracksForMonthAllYears(month: Int, completion: @escaping ([Track], String?)->()) {
+        var allTracks = [Track]()
+        
+        let allYears = Factbook.allYears
+        var completedYears = [Int]()
+        
+        for year in allYears {
+            allTracksForMonth(year: year, month: month) { (tracks, errorString) in
+                DispatchQueue.main.async {
+                    allTracks.append(contentsOf: tracks)
+
+                    completedYears.append(year)
+                    print("Completed \(completedYears.count) of \(allYears.count) years")
+
+                    if (completedYears.count == allYears.count) {
+                        completion(allTracks,errorString)
+                    }
+                }
+            }
+        }
+    }
+    
     func allTracksForMonth(year: Int, month: Int, completion: @escaping ([Track], String?)->()) {
         
         guard
