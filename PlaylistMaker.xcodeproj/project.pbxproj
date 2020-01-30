@@ -22,6 +22,8 @@
 		1358169923E066B000109133 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169323E066B000109133 /* Artist.swift */; };
 		1358169A23E066B000109133 /* RecentTracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169423E066B000109133 /* RecentTracks.swift */; };
 		1358169E23E0672F00109133 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169D23E0672F00109133 /* Date.swift */; };
+		1370181223E3273C002701BF /* ScrobblesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181123E3273C002701BF /* ScrobblesService.swift */; };
+		1370181423E33D74002701BF /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181323E33D74002701BF /* Catalog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		1358169323E066B000109133 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		1358169423E066B000109133 /* RecentTracks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTracks.swift; sourceTree = "<group>"; };
 		1358169D23E0672F00109133 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		1370181123E3273C002701BF /* ScrobblesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrobblesService.swift; sourceTree = "<group>"; };
+		1370181323E33D74002701BF /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				1358167D23E0657600109133 /* Assets.xcassets */,
 				1358167F23E0657600109133 /* LaunchScreen.storyboard */,
 				1358168223E0657600109133 /* Info.plist */,
+				1370181123E3273C002701BF /* ScrobblesService.swift */,
 			);
 			path = PlaylistMaker;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 				1358169223E066B000109133 /* RecentTracksResponse.swift */,
 				1358169023E066B000109133 /* Track.swift */,
 				1358168F23E066B000109133 /* TrackDate.swift */,
+				1370181323E33D74002701BF /* Catalog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 			files = (
 				1358167923E0657300109133 /* ViewController.swift in Sources */,
 				1358169523E066B000109133 /* TrackDate.swift in Sources */,
+				1370181223E3273C002701BF /* ScrobblesService.swift in Sources */,
 				1358167523E0657300109133 /* AppDelegate.swift in Sources */,
 				1358167723E0657300109133 /* SceneDelegate.swift in Sources */,
 				1358169823E066B000109133 /* RecentTracksResponse.swift in Sources */,
@@ -191,6 +198,7 @@
 				1358169E23E0672F00109133 /* Date.swift in Sources */,
 				1358168D23E0661D00109133 /* Keys.swift in Sources */,
 				1358169623E066B000109133 /* Track.swift in Sources */,
+				1370181423E33D74002701BF /* Catalog.swift in Sources */,
 				1358169923E066B000109133 /* Artist.swift in Sources */,
 				1358169723E066B000109133 /* Album.swift in Sources */,
 			);
