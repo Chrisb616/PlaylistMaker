@@ -36,28 +36,9 @@ class ScrobblesService {
     }
     
     func allTracksForMonth(year: Int, month: Int, completion: @escaping ([Track], String?)->()) {
-        
-        guard
-            let startDate = Date.fromComponents(year: year, month: month, day: 1, hour: 0, minute: 0, second: 0),
-            let endDate = Date.fromComponents(year: year, month: month, day: Factbook.totalDaysFor(month: month, year: year), hour: 23, minute: 59, second: 59)
-        else {
-            completion([],"Invalid Date")
-            return
+        allTracksForDateRange(startYear: year, startMonth: month, startDay: 1, endYear: year, endMonth: month, endDay: Factbook.totalDaysFor(month: month, year: year)) { (tracks, errorString) in
+            completion(tracks,errorString)
         }
-        
-        APIClient.instance.getRecentTracksfrom(startDate, to: endDate) { (responses, errorString) in
-            var allTracks = [Track]()
-            
-            for response in responses {
-                if let tracks = response.recenttracks?.track {
-                    let filteredTracks = tracks.filter { $0.date != nil }
-                    allTracks.append(contentsOf: filteredTracks)
-                }
-            }
-            
-            completion(allTracks, nil)
-        }
-        
     }
     
     func allTracksForDateAllYears(month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
@@ -85,10 +66,40 @@ class ScrobblesService {
     }
     
     func allTracksForDate(year: Int, month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
+        allTracksForDateRange(startYear: year, startMonth: month, startDay: day, endYear: year, endMonth: month, endDay: day) { (tracks, errorString) in
+            completion(tracks, errorString)
+        }
+    }
+    
+    func allTracksForDateRangeAllYears(month: Int, day: Int, completion: @escaping ([Track], String?)->()) {
+        var allTracks = [Track]()
+        
+        let allYears = Factbook.allYears
+        var completedYears = [Int]()
+        
+        for year in allYears {
+            allTracksForDate(year: year, month: month, day: day) { (tracks, errorString) in
+                
+                DispatchQueue.main.async {
+                    allTracks.append(contentsOf: tracks)
+                    
+                    completedYears.append(year)
+                    print("Completed \(completedYears.count) of \(allYears.count) years")
+                    
+                    if (completedYears.count == allYears.count) {
+                        completion(allTracks,errorString)
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func allTracksForDateRange(startYear: Int, startMonth: Int, startDay: Int, endYear: Int, endMonth: Int, endDay: Int, completion: @escaping ([Track], String?)->()) {
         
         guard
-            let startDate = Date.fromComponents(year: year, month: month, day: day, hour: 0, minute: 0, second: 0),
-            let endDate = Date.fromComponents(year: year, month: month, day: day, hour: 23, minute: 59, second: 59)
+            let startDate = Date.fromComponents(year: startYear, month: startMonth, day: startDay, hour: 0, minute: 0, second: 0),
+            let endDate = Date.fromComponents(year: endYear, month: endMonth, day: endDay, hour: 23, minute: 59, second: 59)
         else {
             completion([],"Invalid Date")
             return
