@@ -6,7 +6,7 @@
 //  Copyright © 2020 Christopher Boynton. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class APIClient {
     
@@ -16,6 +16,7 @@ class APIClient {
     private let lastFmUrl = "https://ws.audioscrobbler.com/2.0/"
     
     let recentTracksMethod = "user.getrecenttracks"
+    let getUserInfoMethod = "user.getinfo"
     
     private func urlRequest(httpMethod: String, apiMethod: String, params: [String:String]) -> URLRequest? {
         guard let url = URL(string: lastFmUrl) else {
@@ -36,6 +37,69 @@ class APIClient {
         request.httpBody = paramString.data(using: .utf8)
         
         return request
+    }
+    
+    func getImage(fromUrlString urlString: String, completion: @escaping (UIImage?, String?)->()) {
+        guard let url = URL(string: urlString) else {
+            completion(nil, "FAILURE: Could not create url with string \(urlString)")
+            return
+        }
+        
+        let session = URLSession.shared
+    
+        
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            guard let data = data else {
+                completion(nil, "FAILURE: Could not retreive data from url: \(urlString)")
+                return
+            }
+            
+            let image = UIImage(data: data)
+            
+            completion(image, nil)
+        }
+        
+        task.resume()
+    }
+    
+    func getInfoFor(username: String, completion: @escaping (UserInfoResponse?, String?)-> ()) {
+        let params = [
+            "user":username,
+            "format":"json",
+            "api_key":Keys.apiKey
+        ]
+        
+        guard let request = urlRequest(httpMethod: "POST", apiMethod: getUserInfoMethod, params: params) else {
+            completion(nil, "FAILURE: Could not create url request for User Info")
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            guard let data = data else {
+                completion(nil, "FAILURE: Could not retreive data from response: \(request.debugDescription)")
+                return
+            }
+            
+            do {
+                let userInfoResponse = try JSONDecoder().decode(UserInfoResponse.self, from: data)
+                completion(userInfoResponse, nil)
+            }
+            catch {
+                completion(nil, error.localizedDescription)
+            }
+        }
+        
+        task.resume()
     }
     
     
