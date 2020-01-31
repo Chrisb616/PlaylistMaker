@@ -10,4 +10,23 @@ import UIKit
 
 class UserListTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var realNameLabel: UILabel!
+    
+    func load(user: User) {
+        
+        self.usernameLabel.text = user.name.lowercased()
+        self.realNameLabel.text = user.realname.lowercased()
+        
+        let imageUrl = user.image.first { $0.size == "medium" }
+        
+        if let imageUrl = imageUrl {
+            APIClient.instance.getImage(fromUrlString: imageUrl.url) { (image, errorString) in
+                if let errorString = errorString { print(errorString) }
+               
+                DispatchQueue.main.async { self.userImageView.image = image }
+           }
+        }
+    }
 }

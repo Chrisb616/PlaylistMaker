@@ -18,6 +18,26 @@ class UserListViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        
+        loadStoredUsers()
+    }
+    
+    func loadStoredUsers() {
+        let usernames = UserService.instance.retrieveStoredUsernames()
+        
+        usernames.forEach { (username) in
+            UserService.instance.loadInformationFor(username: username) { (user) in
+                guard let user = user else { print("Failed to load user \(username)") ;return }
+                
+                self.users.append(user)
+                
+                if (usernames.count == self.users.count) {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     
@@ -44,6 +64,7 @@ extension UserListViewController: UITableViewDataSource {
         UserService.instance.loadInformationFor(username: username) { (user) in
             guard let user = user else { print("Failed to load user") ;return }
             
+            UserService.instance.save(username: username)
             self.users.append(user)
             
             DispatchQueue.main.async {
@@ -61,6 +82,10 @@ extension UserListViewController: UITableViewDataSource {
             print("Could not load cell")
             return UITableViewCell()
         }
+        
+        let user = users[indexPath.row]
+        
+        cell.load(user: user)
         
         return cell
     }
