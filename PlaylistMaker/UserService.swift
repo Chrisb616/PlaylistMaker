@@ -34,4 +34,20 @@ class UserService {
     func clearUserInfo() {
         user = nil
     }
+    
+    private var _storedUsernames = [String]()
+    
+    func save(username: String) {
+        _storedUsernames.append(username)
+        UserDefaults.standard.set(_storedUsernames,forKey: "storedUsernames")
+    }
+    
+    func retrieveStoredUsernames() -> [String] {
+        if let usernames = UserDefaults.standard.array(forKey: "storedUsernames") as? [String] {
+            _storedUsernames = usernames
+            return usernames
+        } else {
+            return []
+        }
+    }
 }
