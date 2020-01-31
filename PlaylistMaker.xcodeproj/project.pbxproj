@@ -26,10 +26,12 @@
 		1370181423E33D74002701BF /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181323E33D74002701BF /* Catalog.swift */; };
 		1370181623E34637002701BF /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181523E34637002701BF /* Factbook.swift */; };
 		1370181823E4849A002701BF /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181723E4849A002701BF /* UserInfoResponse.swift */; };
-		1370181B23E4879F002701BF /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181A23E4879F002701BF /* LandingViewController.swift */; };
 		138A5B8F23E492B200527D50 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138A5B8E23E492B200527D50 /* UserMenuViewController.swift */; };
 		138A5B9123E4933D00527D50 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138A5B9023E4933D00527D50 /* UserService.swift */; };
 		139929A723E49B6400BE336B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929A623E49B6400BE336B /* User.swift */; };
+		139929A923E4AC4400BE336B /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929A823E4AC4400BE336B /* UserListViewController.swift */; };
+		139929AB23E4AEF500BE336B /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */; };
+		139929AD23E4AF9A00BE336B /* AddUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +56,12 @@
 		1370181323E33D74002701BF /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		1370181523E34637002701BF /* Factbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
 		1370181723E4849A002701BF /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
-		1370181A23E4879F002701BF /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		138A5B8E23E492B200527D50 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		138A5B9023E4933D00527D50 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		139929A623E49B6400BE336B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		139929A823E4AC4400BE336B /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
+		139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsernameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +140,10 @@
 		1370181923E48793002701BF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1370181A23E4879F002701BF /* LandingViewController.swift */,
 				138A5B8E23E492B200527D50 /* UserMenuViewController.swift */,
+				139929A823E4AC4400BE336B /* UserListViewController.swift */,
+				139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */,
+				139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 				1358169523E066B000109133 /* TrackDate.swift in Sources */,
 				1370181223E3273C002701BF /* ScrobblesService.swift in Sources */,
 				1358167523E0657300109133 /* AppDelegate.swift in Sources */,
+				139929AD23E4AF9A00BE336B /* AddUsernameViewController.swift in Sources */,
 				1358167723E0657300109133 /* SceneDelegate.swift in Sources */,
 				1358169823E066B000109133 /* RecentTracksResponse.swift in Sources */,
 				1358168B23E0660700109133 /* APIClient.swift in Sources */,
@@ -227,9 +234,10 @@
 				1358169623E066B000109133 /* Track.swift in Sources */,
 				1370181423E33D74002701BF /* Catalog.swift in Sources */,
 				138A5B8F23E492B200527D50 /* UserMenuViewController.swift in Sources */,
+				139929AB23E4AEF500BE336B /* UserListTableViewCell.swift in Sources */,
+				139929A923E4AC4400BE336B /* UserListViewController.swift in Sources */,
 				138A5B9123E4933D00527D50 /* UserService.swift in Sources */,
 				1358169923E066B000109133 /* Artist.swift in Sources */,
-				1370181B23E4879F002701BF /* LandingViewController.swift in Sources */,
 				1358169723E066B000109133 /* Album.swift in Sources */,
 				1370181623E34637002701BF /* Factbook.swift in Sources */,
 				1370181823E4849A002701BF /* UserInfoResponse.swift in Sources */,
