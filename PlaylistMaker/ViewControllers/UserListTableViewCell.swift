@@ -14,6 +14,12 @@ class UserListTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var realNameLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectedBackgroundView?.isHidden = true
+    }
+    
     func load(user: User) {
         
         self.usernameLabel.text = user.name.lowercased()
