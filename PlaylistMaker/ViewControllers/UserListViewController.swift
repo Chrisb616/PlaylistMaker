@@ -96,7 +96,7 @@ extension UserListViewController: UITableViewDataSource {
 extension UserListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, boolValue) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete User") { (action, view, boolValue) in
             let user = self.users.remove(at: indexPath.row)
             tableView.reloadData()
             UserService.instance.removeStored(username: user.name)
