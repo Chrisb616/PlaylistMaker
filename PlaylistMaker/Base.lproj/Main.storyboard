@@ -7,6 +7,85 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--App Info View Controller-->
+        <scene sceneID="OgA-FF-Roh">
+            <objects>
+                <viewController id="Xc0-6g-D7b" customClass="AppInfoViewController" customModule="PlaylistMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C0j-KQ-KMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last.fm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6H-MN-2xH">
+                                <rect key="frame" x="161.5" y="123.5" width="91" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaylistMaker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXS-XN-cb6">
+                                <rect key="frame" x="48.5" y="50" width="317" height="66"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoZ-nz-2jU">
+                                <rect key="frame" x="194.5" y="106" width="25.5" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmx-ps-PXB">
+                                <rect key="frame" x="158.5" y="211" width="97" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christoper Boynton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-Rf-CsA">
+                                <rect key="frame" x="65" y="238.5" width="284.5" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvN-FW-xDy">
+                                <rect key="frame" x="195.5" y="164.5" width="23" height="16.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/chrisb616" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvn-Yo-ZTk">
+                                <rect key="frame" x="55" y="274.5" width="304" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bOF-Rf-CsA" firstAttribute="centerX" secondItem="bmx-ps-PXB" secondAttribute="centerX" id="0a7-Ut-azP"/>
+                            <constraint firstItem="cXS-XN-cb6" firstAttribute="top" secondItem="d04-gk-xmJ" secondAttribute="top" constant="50" id="2TB-Qe-ZbC"/>
+                            <constraint firstItem="MoZ-nz-2jU" firstAttribute="centerX" secondItem="cXS-XN-cb6" secondAttribute="centerX" id="8qi-aJ-XTs"/>
+                            <constraint firstItem="Xvn-Yo-ZTk" firstAttribute="centerX" secondItem="bOF-Rf-CsA" secondAttribute="centerX" id="9RB-jm-dn6"/>
+                            <constraint firstItem="bmx-ps-PXB" firstAttribute="top" secondItem="kvN-FW-xDy" secondAttribute="bottom" constant="30" id="FfF-IJ-bsH"/>
+                            <constraint firstItem="kvN-FW-xDy" firstAttribute="centerX" secondItem="z6H-MN-2xH" secondAttribute="centerX" id="LnQ-by-VQG"/>
+                            <constraint firstItem="z6H-MN-2xH" firstAttribute="top" secondItem="MoZ-nz-2jU" secondAttribute="bottom" constant="-10" id="PQl-0f-hnf"/>
+                            <constraint firstItem="bmx-ps-PXB" firstAttribute="centerX" secondItem="z6H-MN-2xH" secondAttribute="centerX" id="RCH-as-Uls"/>
+                            <constraint firstItem="Xvn-Yo-ZTk" firstAttribute="top" secondItem="bOF-Rf-CsA" secondAttribute="bottom" constant="-5" id="bHj-0K-StS"/>
+                            <constraint firstItem="cXS-XN-cb6" firstAttribute="centerX" secondItem="d04-gk-xmJ" secondAttribute="centerX" id="cju-Cs-RN5"/>
+                            <constraint firstItem="MoZ-nz-2jU" firstAttribute="top" secondItem="cXS-XN-cb6" secondAttribute="bottom" constant="-10" id="dqe-hH-cDm"/>
+                            <constraint firstItem="bOF-Rf-CsA" firstAttribute="top" secondItem="bmx-ps-PXB" secondAttribute="bottom" id="qOC-Jl-lBS"/>
+                            <constraint firstItem="z6H-MN-2xH" firstAttribute="centerX" secondItem="MoZ-nz-2jU" secondAttribute="centerX" id="uuw-1I-OXc"/>
+                            <constraint firstItem="kvN-FW-xDy" firstAttribute="top" secondItem="z6H-MN-2xH" secondAttribute="bottom" id="wWl-yR-MGt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d04-gk-xmJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WcS-Ot-4T2"/>
+                    <connections>
+                        <outlet property="versionLabel" destination="kvN-FW-xDy" id="uK1-Hn-ruQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3b-ud-vSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="159"/>
+        </scene>
         <!--Add Username View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -60,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="832"/>
+            <point key="canvasLocation" x="1588" y="159"/>
         </scene>
         <!--User List-->
         <scene sceneID="lfF-6t-VGS">
@@ -143,6 +222,7 @@
                                             <outlet property="realNameLabel" destination="70N-Fq-9Oc" id="vhV-op-AT8"/>
                                             <outlet property="userImageView" destination="5AY-A5-Sye" id="v87-1P-ozp"/>
                                             <outlet property="usernameLabel" destination="1Us-e8-kgk" id="gn1-CW-jg9"/>
+                                            <segue destination="eem-ys-XW2" kind="show" id="jQ4-Ux-4rV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -158,6 +238,11 @@
                         <viewLayoutGuide key="safeArea" id="Bl4-Ox-q2I"/>
                     </view>
                     <navigationItem key="navigationItem" title="User List" id="wkf-bF-DXD">
+                        <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="QCX-bW-81h">
+                            <connections>
+                                <segue destination="Xc0-6g-D7b" kind="presentation" id="EZh-0h-wDL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="MVe-Ie-tVx">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -175,6 +260,22 @@
             </objects>
             <point key="canvasLocation" x="697" y="832"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="lhl-6n-C8D">
+            <objects>
+                <viewController id="eem-ys-XW2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oVd-w5-J2b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kFy-iz-b4g"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gxn-8i-BSF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEs-Gb-3lG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606" y="830"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="DDa-Iu-54G">
             <objects>
@@ -183,8 +284,12 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -198,6 +303,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>

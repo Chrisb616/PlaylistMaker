@@ -22,6 +22,7 @@
 		1358169923E066B000109133 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169323E066B000109133 /* Artist.swift */; };
 		1358169A23E066B000109133 /* RecentTracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169423E066B000109133 /* RecentTracks.swift */; };
 		1358169E23E0672F00109133 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169D23E0672F00109133 /* Date.swift */; };
+		135F5C6A23E872BA006B4A0B /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */; };
 		1370181223E3273C002701BF /* ScrobblesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181123E3273C002701BF /* ScrobblesService.swift */; };
 		1370181423E33D74002701BF /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181323E33D74002701BF /* Catalog.swift */; };
 		1370181623E34637002701BF /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181523E34637002701BF /* Factbook.swift */; };
@@ -52,6 +53,7 @@
 		1358169323E066B000109133 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		1358169423E066B000109133 /* RecentTracks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentTracks.swift; sourceTree = "<group>"; };
 		1358169D23E0672F00109133 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		1370181123E3273C002701BF /* ScrobblesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrobblesService.swift; sourceTree = "<group>"; };
 		1370181323E33D74002701BF /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		1370181523E34637002701BF /* Factbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				139929A823E4AC4400BE336B /* UserListViewController.swift */,
 				139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */,
 				139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */,
+				135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				139929AD23E4AF9A00BE336B /* AddUsernameViewController.swift in Sources */,
 				1358167723E0657300109133 /* SceneDelegate.swift in Sources */,
 				1358169823E066B000109133 /* RecentTracksResponse.swift in Sources */,
+				135F5C6A23E872BA006B4A0B /* AppInfoViewController.swift in Sources */,
 				1358168B23E0660700109133 /* APIClient.swift in Sources */,
 				1358169A23E066B000109133 /* RecentTracks.swift in Sources */,
 				139929A723E49B6400BE336B /* User.swift in Sources */,
