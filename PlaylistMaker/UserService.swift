@@ -38,8 +38,13 @@ class UserService {
     private var _storedUsernames = [String]()
     
     func save(username: String) {
-        _storedUsernames.append(username)
+        _storedUsernames.append(username.lowercased())
         UserDefaults.standard.set(_storedUsernames,forKey: "storedUsernames")
+    }
+    
+    func removeStored(username: String) {
+        _storedUsernames = _storedUsernames.filter { $0 != username.lowercased() }
+        UserDefaults.standard.set(_storedUsernames, forKey: "storedUsernames")
     }
     
     func retrieveStoredUsernames() -> [String] {
