@@ -46,6 +46,10 @@ class UserListViewController: UIViewController {
         if segue.identifier == "addSegue", let destinationViewController = segue.destination as? AddUsernameViewController {
             destinationViewController.delegate = self
         }
+        else if segue.identifier == "userMenu", let destinationViewController = segue.destination as? UserMenuViewController, let row = tableView.indexPathForSelectedRow?.row {
+            let user = users[row]
+            destinationViewController.user = user
+        }
     }
     
 }

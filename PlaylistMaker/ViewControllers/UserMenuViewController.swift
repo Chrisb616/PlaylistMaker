@@ -10,43 +10,38 @@ import UIKit
 
 class UserMenuViewController: UIViewController {
     
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var memberSinceLabel: UILabel!
+    var user: User?
     
-    var username: String?
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var realNameLabel: UILabel!
+    @IBOutlet weak var memberSinceLabel: UILabel!
+    @IBOutlet weak var totalScrobblesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let username = username else {
-            self.dismiss(animated: true, completion: nil)
+        loadUserInfo()
+    }
+    
+    func loadUserInfo() {
+        
+        guard let user = user else {
+            usernameLabel.text = ""
+            realNameLabel.text = ""
+            memberSinceLabel.text = ""
+            totalScrobblesLabel.text = ""
             return
         }
         
-        UserService.instance.loadInformationFor(username: username) { (user) in
-            guard let user = user else { return }
-            
-            self.loadView(forUser: user)
-        }
+        usernameLabel.text = user.name.lowercased()
+        realNameLabel.text = user.realname.lowercased()
+        totalScrobblesLabel.text = "\(user.playcount) scrobbles"
         
-    }
-    
-    private func loadView(forUser user: User) {
-        let imageURL = user.image.first { $0.size == "medium"}?.url ?? ""
-        
-        APIClient.instance.getImage(fromUrlString: imageURL) { (image, errorString) in
-            DispatchQueue.main.async {
-                self.usernameLabel.text = user.name.lowercased()
-                self.memberSinceLabel.text = "member since \(user.registered.date?.formatted(as: "MMMM, yyyy").lowercased() ?? "[unknown]")"
-                self.userImageView.image = image
-                
-                self.usernameLabel.isHidden = false
-                self.memberSinceLabel.isHidden = false
-                self.userImageView.isHidden = false
-            }
+        if let registeredDate = user.registered.date {
+            memberSinceLabel.text = "member since \(registeredDate.formatted(as: "MMMM yyyy").lowercased())"
+        } else {
+            memberSinceLabel.text = ""
         }
     }
-    
     
 }
