@@ -16,3 +16,6 @@ playground.xcworkspace
 .build/
 
 Keys.swift
+
+Pods
+Podfile.lock

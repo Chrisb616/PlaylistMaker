@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084E65CD8161B7733D33EE23 /* Pods_PlaylistMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5C57AADB3F009453F77A20 /* Pods_PlaylistMaker.framework */; };
 		1358167523E0657300109133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358167423E0657300109133 /* AppDelegate.swift */; };
 		1358167723E0657300109133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358167623E0657300109133 /* SceneDelegate.swift */; };
 		1358167C23E0657300109133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1358167A23E0657300109133 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EF4182515BC08216EDB0B0C /* Pods-PlaylistMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaylistMaker.release.xcconfig"; path = "Target Support Files/Pods-PlaylistMaker/Pods-PlaylistMaker.release.xcconfig"; sourceTree = "<group>"; };
 		1358167123E0657300109133 /* PlaylistMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaylistMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1358167423E0657300109133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1358167623E0657300109133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		139929A823E4AC4400BE336B /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsernameViewController.swift; sourceTree = "<group>"; };
+		5B5C57AADB3F009453F77A20 /* Pods_PlaylistMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaylistMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3ED98583EF8C0B58434D923 /* Pods-PlaylistMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaylistMaker.debug.xcconfig"; path = "Target Support Files/Pods-PlaylistMaker/Pods-PlaylistMaker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084E65CD8161B7733D33EE23 /* Pods_PlaylistMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,8 @@
 			children = (
 				1358167323E0657300109133 /* PlaylistMaker */,
 				1358167223E0657300109133 /* Products */,
+				E1724D06807B3F89911ABCFB /* Pods */,
+				4A633A6E6C8D698A51F3B80C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +185,24 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		4A633A6E6C8D698A51F3B80C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B5C57AADB3F009453F77A20 /* Pods_PlaylistMaker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1724D06807B3F89911ABCFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3ED98583EF8C0B58434D923 /* Pods-PlaylistMaker.debug.xcconfig */,
+				0EF4182515BC08216EDB0B0C /* Pods-PlaylistMaker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1358168523E0657600109133 /* Build configuration list for PBXNativeTarget "PlaylistMaker" */;
 			buildPhases = (
+				DC8E5223A533FEFBD6331E5A /* [CP] Check Pods Manifest.lock */,
 				1358166D23E0657300109133 /* Sources */,
 				1358166E23E0657300109133 /* Frameworks */,
 				1358166F23E0657300109133 /* Resources */,
+				547F3A53FACC17C7985A7F99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +270,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		547F3A53FACC17C7985A7F99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaylistMaker/Pods-PlaylistMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaylistMaker/Pods-PlaylistMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaylistMaker/Pods-PlaylistMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC8E5223A533FEFBD6331E5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaylistMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1358166D23E0657300109133 /* Sources */ = {
@@ -414,6 +483,7 @@
 		};
 		1358168623E0657600109133 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3ED98583EF8C0B58434D923 /* Pods-PlaylistMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -432,6 +502,7 @@
 		};
 		1358168723E0657600109133 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EF4182515BC08216EDB0B0C /* Pods-PlaylistMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
