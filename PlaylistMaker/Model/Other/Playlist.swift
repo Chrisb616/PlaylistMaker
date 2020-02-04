@@ -7,21 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Playlist {
+class Playlist: Object {
     
-    var name: String
-    var contentDescription: String
+    @objc dynamic var name: String?
+    @objc dynamic var contentDescription: String?
+    @objc dynamic var creationDate: Date?
     
-    var tracks: [Track]
-    
-    var creationDate: Date
-    
-    init(name: String, contentDescription: String, tracks: [Track]) {
-        self.name = name
-        self.contentDescription = contentDescription
-        self.tracks = tracks
-        self.creationDate = Date()
-    }
+    var tracks = List<PlaylistTrack>()
+}
+
+class PlaylistTrack: Object {
+    @objc dynamic var trackName: String?
+    @objc dynamic var artistName: String?
+    @objc dynamic var albumName: String?
     
 }
