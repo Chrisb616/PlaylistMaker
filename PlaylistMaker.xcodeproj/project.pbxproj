@@ -23,6 +23,7 @@
 		1358169E23E0672F00109133 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358169D23E0672F00109133 /* Date.swift */; };
 		135F5C6A23E872BA006B4A0B /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */; };
 		135F5C6E23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C6D23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift */; };
+		135F5C7123E9E724006B4A0B /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C7023E9E724006B4A0B /* Playlist.swift */; };
 		1370181223E3273C002701BF /* ScrobblesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181123E3273C002701BF /* ScrobblesService.swift */; };
 		1370181423E33D74002701BF /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181323E33D74002701BF /* Catalog.swift */; };
 		1370181623E34637002701BF /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181523E34637002701BF /* Factbook.swift */; };
@@ -54,6 +55,7 @@
 		1358169D23E0672F00109133 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		135F5C6D23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuPlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		135F5C7023E9E724006B4A0B /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		1370181123E3273C002701BF /* ScrobblesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrobblesService.swift; sourceTree = "<group>"; };
 		1370181323E33D74002701BF /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		1370181523E34637002701BF /* Factbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
@@ -113,8 +115,9 @@
 		1358168E23E0669F00109133 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				135F5C6C23E9E353006B4A0B /* Services */,
 				135F5C6B23E9E328006B4A0B /* API Model */,
+				135F5C6C23E9E353006B4A0B /* Services */,
+				135F5C6F23E9E70F006B4A0B /* Other */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +155,14 @@
 				138A5B9023E4933D00527D50 /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		135F5C6F23E9E70F006B4A0B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				135F5C7023E9E724006B4A0B /* Playlist.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		1370181923E48793002701BF /* ViewControllers */ = {
@@ -249,6 +260,7 @@
 				1358168B23E0660700109133 /* APIClient.swift in Sources */,
 				1358169A23E066B000109133 /* RecentTracks.swift in Sources */,
 				139929A723E49B6400BE336B /* User.swift in Sources */,
+				135F5C7123E9E724006B4A0B /* Playlist.swift in Sources */,
 				1358169E23E0672F00109133 /* Date.swift in Sources */,
 				1358168D23E0661D00109133 /* Keys.swift in Sources */,
 				1358169623E066B000109133 /* Track.swift in Sources */,
