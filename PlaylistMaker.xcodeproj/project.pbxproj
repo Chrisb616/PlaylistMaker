@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		135F5C6A23E872BA006B4A0B /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */; };
 		135F5C6E23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C6D23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift */; };
 		135F5C7123E9E724006B4A0B /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C7023E9E724006B4A0B /* Playlist.swift */; };
+		135F5C7323E9FC6F006B4A0B /* PlaylistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C7223E9FC6F006B4A0B /* PlaylistService.swift */; };
 		1370181223E3273C002701BF /* ScrobblesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181123E3273C002701BF /* ScrobblesService.swift */; };
 		1370181423E33D74002701BF /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181323E33D74002701BF /* Catalog.swift */; };
 		1370181623E34637002701BF /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181523E34637002701BF /* Factbook.swift */; };
@@ -58,6 +59,7 @@
 		135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		135F5C6D23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuPlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		135F5C7023E9E724006B4A0B /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		135F5C7223E9FC6F006B4A0B /* PlaylistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistService.swift; sourceTree = "<group>"; };
 		1370181123E3273C002701BF /* ScrobblesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrobblesService.swift; sourceTree = "<group>"; };
 		1370181323E33D74002701BF /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		1370181523E34637002701BF /* Factbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
@@ -144,7 +146,6 @@
 				1370181723E4849A002701BF /* UserInfoResponse.swift */,
 				1358169123E066B000109133 /* Album.swift */,
 				1358169323E066B000109133 /* Artist.swift */,
-				1370181323E33D74002701BF /* Catalog.swift */,
 				1358169423E066B000109133 /* RecentTracks.swift */,
 				1358169023E066B000109133 /* Track.swift */,
 				1358168F23E066B000109133 /* TrackDate.swift */,
@@ -160,6 +161,7 @@
 				1370181523E34637002701BF /* Factbook.swift */,
 				1370181123E3273C002701BF /* ScrobblesService.swift */,
 				138A5B9023E4933D00527D50 /* UserService.swift */,
+				135F5C7223E9FC6F006B4A0B /* PlaylistService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -167,6 +169,7 @@
 		135F5C6F23E9E70F006B4A0B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				1370181323E33D74002701BF /* Catalog.swift */,
 				135F5C7023E9E724006B4A0B /* Playlist.swift */,
 			);
 			path = Other;
@@ -199,7 +202,6 @@
 				F3ED98583EF8C0B58434D923 /* Pods-PlaylistMaker.debug.xcconfig */,
 				0EF4182515BC08216EDB0B0C /* Pods-PlaylistMaker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -341,6 +343,7 @@
 				1358169923E066B000109133 /* Artist.swift in Sources */,
 				1358169723E066B000109133 /* Album.swift in Sources */,
 				1370181623E34637002701BF /* Factbook.swift in Sources */,
+				135F5C7323E9FC6F006B4A0B /* PlaylistService.swift in Sources */,
 				1370181823E4849A002701BF /* UserInfoResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
