@@ -17,10 +17,24 @@ class UserMenuViewController: UIViewController {
     @IBOutlet weak var memberSinceLabel: UILabel!
     @IBOutlet weak var totalScrobblesLabel: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var playlists = [Playlist]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadUserInfo()
+        
+        tableView.dataSource = self
+        
+        PlaylistService.instance.createPlaylistForTimeRange(starting: Date().addingTimeInterval(-3_000_000), ending: Date(), name: "Now") { (playlist) in
+            self.playlists.append(playlist)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func loadUserInfo() {
@@ -43,5 +57,24 @@ class UserMenuViewController: UIViewController {
             memberSinceLabel.text = ""
         }
     }
+    
+}
+
+extension UserMenuViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return playlists.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "playlistCell") as? UserMenuPlaylistTableViewCell {
+            let playlist = playlists[indexPath.row]
+            cell.playlistNameLabel.text = playlist.name
+            cell.playlistDescriptionLabel.text = "description"
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
     
 }

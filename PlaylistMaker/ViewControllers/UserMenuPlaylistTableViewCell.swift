@@ -9,7 +9,10 @@
 import UIKit
 
 class UserMenuPlaylistTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var playlistNameLabel: UILabel!
+    @IBOutlet weak var playlistDescriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

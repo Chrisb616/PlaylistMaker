@@ -363,12 +363,17 @@
                                                 <constraint firstAttribute="trailing" secondItem="Khm-vo-GWh" secondAttribute="trailing" constant="20" id="Kpb-JH-ygD"/>
                                                 <constraint firstItem="HwF-Z3-8rO" firstAttribute="leading" secondItem="f8G-8r-sR4" secondAttribute="leading" id="O5w-Ib-ccj"/>
                                                 <constraint firstItem="byc-7h-BPy" firstAttribute="centerY" secondItem="6JF-Nk-cYp" secondAttribute="centerY" id="PRe-Oc-XGN"/>
+                                                <constraint firstItem="Khm-vo-GWh" firstAttribute="top" secondItem="HwF-Z3-8rO" secondAttribute="bottom" constant="14.5" id="UXK-f0-0ef"/>
                                                 <constraint firstAttribute="trailing" secondItem="byc-7h-BPy" secondAttribute="trailing" constant="20" id="YLv-Tg-Auw"/>
                                                 <constraint firstItem="f8G-8r-sR4" firstAttribute="top" secondItem="6JF-Nk-cYp" secondAttribute="top" constant="20" id="bUe-3d-LBU"/>
                                                 <constraint firstItem="HwF-Z3-8rO" firstAttribute="top" secondItem="f8G-8r-sR4" secondAttribute="bottom" id="uB9-5S-iyp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="playlistDescriptionLabel" destination="HwF-Z3-8rO" id="8dw-Q1-yhj"/>
+                                            <outlet property="playlistNameLabel" destination="f8G-8r-sR4" id="evG-DU-8qv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -389,6 +394,7 @@
                     <connections>
                         <outlet property="memberSinceLabel" destination="jZm-rT-eaI" id="to2-rt-FvI"/>
                         <outlet property="realNameLabel" destination="Jv9-2C-gxF" id="AF2-Ly-DUz"/>
+                        <outlet property="tableView" destination="n2s-rF-sos" id="KcZ-93-XYL"/>
                         <outlet property="totalScrobblesLabel" destination="cmo-0O-3ay" id="nv6-yc-h0h"/>
                         <outlet property="usernameLabel" destination="t9j-0X-Fgv" id="OIM-b6-Edo"/>
                     </connections>
