@@ -13,13 +13,15 @@ class CreateBetweenTwoPlaylistViewController: UIViewController {
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
-    var delegate: UserMenuViewController?
+    weak var delegate: UserMenuViewController?
     
     @IBAction func makePlaylistButton_TouchUpInside(_ sender: Any) {
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
         
         let name = nameForPlaylist(withStartDate: startDate, endDate: endDate)
+        
+        self.dismiss(animated: true, completion: nil)
         
         PlaylistService.instance.createPlaylistForTimeRange(starting: startDate, ending: endDate, name: name) { (playlist) in
             
