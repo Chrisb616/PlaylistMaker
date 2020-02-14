@@ -26,6 +26,7 @@
 		135F5C6E23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C6D23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift */; };
 		135F5C7123E9E724006B4A0B /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C7023E9E724006B4A0B /* Playlist.swift */; };
 		135F5C7323E9FC6F006B4A0B /* PlaylistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F5C7223E9FC6F006B4A0B /* PlaylistService.swift */; };
+		136098E423F5DE45008E426A /* CreateBetweenTwoPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136098E323F5DE45008E426A /* CreateBetweenTwoPlaylistViewController.swift */; };
 		1370181223E3273C002701BF /* ScrobblesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181123E3273C002701BF /* ScrobblesService.swift */; };
 		1370181423E33D74002701BF /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181323E33D74002701BF /* Catalog.swift */; };
 		1370181623E34637002701BF /* Factbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370181523E34637002701BF /* Factbook.swift */; };
@@ -60,6 +61,7 @@
 		135F5C6D23E9E449006B4A0B /* UserMenuPlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuPlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		135F5C7023E9E724006B4A0B /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		135F5C7223E9FC6F006B4A0B /* PlaylistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistService.swift; sourceTree = "<group>"; };
+		136098E323F5DE45008E426A /* CreateBetweenTwoPlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBetweenTwoPlaylistViewController.swift; sourceTree = "<group>"; };
 		1370181123E3273C002701BF /* ScrobblesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrobblesService.swift; sourceTree = "<group>"; };
 		1370181323E33D74002701BF /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		1370181523E34637002701BF /* Factbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factbook.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */,
 				139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */,
 				135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */,
+				136098E323F5DE45008E426A /* CreateBetweenTwoPlaylistViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				1358167723E0657300109133 /* SceneDelegate.swift in Sources */,
 				1358169823E066B000109133 /* RecentTracksResponse.swift in Sources */,
 				135F5C6A23E872BA006B4A0B /* AppInfoViewController.swift in Sources */,
+				136098E423F5DE45008E426A /* CreateBetweenTwoPlaylistViewController.swift in Sources */,
 				1358168B23E0660700109133 /* APIClient.swift in Sources */,
 				1358169A23E066B000109133 /* RecentTracks.swift in Sources */,
 				139929A723E49B6400BE336B /* User.swift in Sources */,

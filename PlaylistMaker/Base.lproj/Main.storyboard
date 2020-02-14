@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3b-ud-vSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="159"/>
+            <point key="canvasLocation" x="1587" y="-544"/>
         </scene>
         <!--Add Username View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -139,7 +139,119 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="159"/>
+            <point key="canvasLocation" x="1587" y="137"/>
+        </scene>
+        <!--Create Between Two Playlist View Controller-->
+        <scene sceneID="XXF-y3-5Sh">
+            <objects>
+                <viewController id="nZQ-W4-R9P" customClass="CreateBetweenTwoPlaylistViewController" customModule="PlaylistMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AI8-cM-IEn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgI-y6-J5u">
+                                <rect key="frame" x="10" y="85" width="394" height="239"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="q3G-sD-Dwe">
+                                <rect key="frame" x="10" y="85" width="394" height="239"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEk-Qg-pLF">
+                                <rect key="frame" x="10" y="379" width="394" height="239"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="QI1-Ih-p8O">
+                                <rect key="frame" x="10" y="379" width="394" height="239"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for a time period starting..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izD-2x-dZ0">
+                                <rect key="frame" x="57.5" y="50" width="299" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="gfC-Jf-nWF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...and ending..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a62-hP-5ij">
+                                <rect key="frame" x="122" y="344" width="170" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="BWC-SF-7WA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-hu-G3J">
+                                <rect key="frame" x="20" y="718" width="374" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="X99-tO-Jzh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="make playlist">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="makePlaylistButton_TouchUpInside:" destination="nZQ-W4-R9P" eventType="touchUpInside" id="hdF-47-SBR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7843137255" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pgI-y6-J5u" firstAttribute="bottom" secondItem="q3G-sD-Dwe" secondAttribute="bottom" id="2aa-Bh-CEs"/>
+                            <constraint firstItem="izD-2x-dZ0" firstAttribute="centerX" secondItem="q3G-sD-Dwe" secondAttribute="centerX" id="9dl-HD-ERk"/>
+                            <constraint firstItem="pgI-y6-J5u" firstAttribute="trailing" secondItem="q3G-sD-Dwe" secondAttribute="trailing" id="FKk-Mf-ac1"/>
+                            <constraint firstItem="pgI-y6-J5u" firstAttribute="top" secondItem="q3G-sD-Dwe" secondAttribute="top" id="HJe-qh-O6j"/>
+                            <constraint firstItem="ftg-hu-G3J" firstAttribute="leading" secondItem="tHe-wf-nqJ" secondAttribute="leading" constant="20" id="X5v-25-oCt"/>
+                            <constraint firstItem="a62-hP-5ij" firstAttribute="top" secondItem="q3G-sD-Dwe" secondAttribute="bottom" constant="20" id="XMJ-Hm-cCw"/>
+                            <constraint firstItem="QI1-Ih-p8O" firstAttribute="height" secondItem="q3G-sD-Dwe" secondAttribute="height" id="Y3g-sJ-Ic4"/>
+                            <constraint firstItem="SEk-Qg-pLF" firstAttribute="leading" secondItem="QI1-Ih-p8O" secondAttribute="leading" id="beV-YI-Wfj"/>
+                            <constraint firstItem="SEk-Qg-pLF" firstAttribute="top" secondItem="QI1-Ih-p8O" secondAttribute="top" id="duc-Yt-WND"/>
+                            <constraint firstItem="a62-hP-5ij" firstAttribute="centerX" secondItem="QI1-Ih-p8O" secondAttribute="centerX" id="dy5-Ps-shq"/>
+                            <constraint firstItem="q3G-sD-Dwe" firstAttribute="top" secondItem="izD-2x-dZ0" secondAttribute="bottom" id="eLM-vv-HfX"/>
+                            <constraint firstItem="SEk-Qg-pLF" firstAttribute="bottom" secondItem="QI1-Ih-p8O" secondAttribute="bottom" id="fU4-ko-6Kb"/>
+                            <constraint firstItem="tHe-wf-nqJ" firstAttribute="bottom" secondItem="ftg-hu-G3J" secondAttribute="bottom" constant="40" id="hzD-TM-ZH7"/>
+                            <constraint firstItem="QI1-Ih-p8O" firstAttribute="leading" secondItem="q3G-sD-Dwe" secondAttribute="leading" id="j4m-5X-AxW"/>
+                            <constraint firstItem="QI1-Ih-p8O" firstAttribute="top" secondItem="a62-hP-5ij" secondAttribute="bottom" id="oC1-Vz-siu"/>
+                            <constraint firstItem="tHe-wf-nqJ" firstAttribute="trailing" secondItem="ftg-hu-G3J" secondAttribute="trailing" constant="20" id="p1Z-q3-KUV"/>
+                            <constraint firstItem="QI1-Ih-p8O" firstAttribute="trailing" secondItem="q3G-sD-Dwe" secondAttribute="trailing" id="pFq-cg-GGB"/>
+                            <constraint firstItem="q3G-sD-Dwe" firstAttribute="leading" secondItem="tHe-wf-nqJ" secondAttribute="leading" constant="10" id="qEq-ZT-ssW"/>
+                            <constraint firstItem="izD-2x-dZ0" firstAttribute="top" secondItem="tHe-wf-nqJ" secondAttribute="top" constant="50" id="qg1-1C-cyO"/>
+                            <constraint firstItem="SEk-Qg-pLF" firstAttribute="trailing" secondItem="QI1-Ih-p8O" secondAttribute="trailing" id="s4y-eD-s9w"/>
+                            <constraint firstItem="tHe-wf-nqJ" firstAttribute="trailing" secondItem="q3G-sD-Dwe" secondAttribute="trailing" constant="10" id="uId-4v-xo4"/>
+                            <constraint firstItem="pgI-y6-J5u" firstAttribute="leading" secondItem="q3G-sD-Dwe" secondAttribute="leading" id="yvl-6N-XN7"/>
+                            <constraint firstItem="ftg-hu-G3J" firstAttribute="top" secondItem="QI1-Ih-p8O" secondAttribute="bottom" constant="100" id="zoq-da-RM3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tHe-wf-nqJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="endDatePicker" destination="QI1-Ih-p8O" id="g33-k3-nWl"/>
+                        <outlet property="startDatePicker" destination="q3G-sD-Dwe" id="s1c-OD-1cK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al4-nu-ICt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="137"/>
         </scene>
         <!--User List-->
         <scene sceneID="lfF-6t-VGS">
@@ -390,7 +502,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kFy-iz-b4g"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gxn-8i-BSF"/>
+                    <navigationItem key="navigationItem" id="gxn-8i-BSF">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="2mU-YH-Rlp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="nZQ-W4-R9P" kind="presentation" identifier="addNew" id="prt-WH-0tQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="memberSinceLabel" destination="jZm-rT-eaI" id="to2-rt-FvI"/>
                         <outlet property="realNameLabel" destination="Jv9-2C-gxF" id="AF2-Ly-DUz"/>
@@ -401,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEs-Gb-3lG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.7971014492755" y="829.6875"/>
+            <point key="canvasLocation" x="1587" y="861"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DDa-Iu-54G">

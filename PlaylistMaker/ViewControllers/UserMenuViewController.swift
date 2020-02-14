@@ -27,14 +27,6 @@ class UserMenuViewController: UIViewController {
         loadUserInfo()
         
         tableView.dataSource = self
-        
-        PlaylistService.instance.createPlaylistForTimeRange(starting: Date().addingTimeInterval(-3_000_000), ending: Date(), name: "Now") { (playlist) in
-            self.playlists.append(playlist)
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
     
     func loadUserInfo() {
@@ -55,6 +47,18 @@ class UserMenuViewController: UIViewController {
             memberSinceLabel.text = "member since \(registeredDate.formatted(as: "MMMM yyyy").lowercased())"
         } else {
             memberSinceLabel.text = ""
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "addNew" {
+            guard let destination = segue.destination as? CreateBetweenTwoPlaylistViewController else {
+                return
+            }
+            
+            destination.delegate = self
         }
     }
     
