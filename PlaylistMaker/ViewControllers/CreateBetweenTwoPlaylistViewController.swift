@@ -19,11 +19,15 @@ class CreateBetweenTwoPlaylistViewController: UIViewController {
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
         
-        let name = nameForPlaylist(withStartDate: startDate, endDate: endDate)
+        let playlistName = nameForPlaylist(withStartDate: startDate, endDate: endDate)
+        guard let username = delegate?.user?.name else {
+            print("User not found.")
+            return
+        }
         
         self.dismiss(animated: true, completion: nil)
         
-        PlaylistService.instance.createPlaylistForTimeRange(starting: startDate, ending: endDate, name: name) { (playlist) in
+        PlaylistService.instance.createPlaylistForTimeRange(starting: startDate, ending: endDate, username: username, playlistName: playlistName) { (playlist) in
             
             guard let delegate = self.delegate else {
                 print("FAILURE: Delegate has been unloaded")

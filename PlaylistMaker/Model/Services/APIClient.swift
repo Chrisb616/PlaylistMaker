@@ -39,9 +39,10 @@ class APIClient {
         return request
     }
     
-    func getImage(fromUrlString urlString: String, completion: @escaping (UIImage?, String?)->()) {
+    func getImage(fromUrlString urlString: String, completion: @escaping (UIImage?, CBError?)->()) {
         guard let url = URL(string: urlString) else {
-            completion(nil, "FAILURE: Could not create url with string \(urlString)")
+            let error = CBError(debugString: "Could not create url with string: \(urlString)", userDisplayString: "There was a problem loading this image.")
+            completion(nil, error)
             return
         }
         
@@ -54,7 +55,8 @@ class APIClient {
             }
             
             guard let data = data else {
-                completion(nil, "FAILURE: Could not retreive data from url: \(urlString)")
+                let error = CBError(debugString: "No data recieved from url \(urlString)", userDisplayString: "There was a problem loading this image.")
+                completion(nil, error)
                 return
             }
             
@@ -66,7 +68,7 @@ class APIClient {
         task.resume()
     }
     
-    func getInfoFor(username: String, completion: @escaping (UserInfoResponse?, String?)-> ()) {
+    func getInfoFor(username: String, completion: @escaping (UserInfoResponse?, CBError?)-> ()) {
         let params = [
             "user":username,
             "format":"json",
@@ -74,7 +76,8 @@ class APIClient {
         ]
         
         guard let request = urlRequest(httpMethod: "POST", apiMethod: getUserInfoMethod, params: params) else {
-            completion(nil, "FAILURE: Could not create url request for User Info")
+            let error = CBError(debugString: "Could not create url request for User Info for \(username)", userDisplayString: "There was a problem loading info for \(username)")
+            completion(nil, error)
             return
         }
         
@@ -86,7 +89,8 @@ class APIClient {
             }
             
             guard let data = data else {
-                completion(nil, "FAILURE: Could not retreive data from response: \(request.debugDescription)")
+                let error = CBError(debugString: "No data recieved from request for user info for \(username)", userDisplayString: "There was a problem loading info for \(username)")
+                completion(nil, error)
                 return
             }
             
@@ -95,7 +99,9 @@ class APIClient {
                 completion(userInfoResponse, nil)
             }
             catch {
-                completion(nil, error.localizedDescription)
+                var cbError = CBError(debugString: error.localizedDescription, userDisplayString: "There was a problem loading info for \(username)")
+                cbError.swiftError = error
+                completion(nil, cbError)
             }
         }
         
@@ -103,18 +109,18 @@ class APIClient {
     }
     
     
-    func getRecentTracksfrom(_ startDate: Date, to endDate: Date, completion: @escaping ([RecentTracksResponse],String?)->()) {
-        getRecentTracksRecursive(startDate, to: endDate, currentPage: 1, progress: []) { (responses, errorString) in
-            completion(responses,errorString)
+    func getRecentTracksfrom(_ startDate: Date, to endDate: Date, username: String, completion: @escaping ([RecentTracksResponse],CBError?)->()) {
+        getRecentTracksRecursive(startDate, to: endDate, username: username, currentPage: 1, progress: []) { (responses, error) in
+            completion(responses,error)
         }
     }
     
     /**
      Completes a data task for the request. Completion handles response data, error string.
      */
-    private func getRecentTracksRecursive(_ startDate: Date, to endDate: Date, currentPage: Int, progress: [RecentTracksResponse], completion: @escaping ([RecentTracksResponse],String?)->()) {
+    private func getRecentTracksRecursive(_ startDate: Date, to endDate: Date, username: String, currentPage: Int, progress: [RecentTracksResponse], completion: @escaping ([RecentTracksResponse],CBError?)->()) {
         let params = [
-            "user":"chrisb616",
+            "user":username,
             "api_key":Keys.apiKey,
             "format":"json",
             "limit":"200",
@@ -124,7 +130,8 @@ class APIClient {
         ]
         
         guard let request = urlRequest(httpMethod: "POST", apiMethod: recentTracksMethod, params: params) else {
-            completion(progress, "FAILURE: Could not create url request for page 1.")
+            let cbError = CBError(debugString: "Could not create url request for page \(currentPage)", userDisplayString: "There was a problem loading tracks for this user.")
+            completion(progress, cbError)
             return
         }
         
@@ -137,7 +144,8 @@ class APIClient {
             }
             
             guard let data = data else {
-                completion(progress, "FAILURE: Could not retrieve data from URL.")
+                let cbError = CBError(debugString: "No data recieved from recent   \(currentPage)", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                completion(progress, cbError)
                 return
             }
             
@@ -148,32 +156,38 @@ class APIClient {
                 newProgress.append(recentTracksResponse)
                 
                 guard let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:[String:Any]] else {
-                    completion(progress,"Could not convert JSON into dictionary")
+                    let cbError = CBError(debugString: "Could not convert JSON into dictionary", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                    completion(progress,cbError)
                     return
                 }
                 
                 guard let recentTracks = dict["recenttracks"] else {
-                    completion(progress,"No tag 'recenttracks' inside of dictionary object")
+                    let cbError = CBError(debugString: "No tag 'recenttracks' inside of dictionary object", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                    completion(progress,cbError)
                     return
                 }
                 
                 guard let attr = recentTracks["@attr"] as? [String:String] else {
-                    completion(progress,"No tag '@attr' inside of recenttracks dictionary")
+                    let cbError = CBError(debugString: "No tag '@attr' inside of dictionary object", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                    completion(progress,cbError)
                     return
                 }
                 
                 guard let totalPagesObject = attr["totalPages"] else {
-                    completion(progress,"No tag 'totalPages' inside of attr dictionary")
+                    let cbError = CBError(debugString: "No tag 'totalPages' inside of dictionary object", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                    completion(progress,cbError)
                     return
                 }
                 
                 guard let totalPages = Int(totalPagesObject) else {
-                    completion(progress,"Object 'totalPages' cannot be cast to Int")
+                    let cbError = CBError(debugString: "Object 'totalPages' cannot be cast to Int", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                    completion(progress,cbError)
                     return
                 }
                 
                 if (totalPages == 0) {
-                    completion(progress,"No tracks found for date")
+                    let cbError = CBError(debugString: "Total track pages is 0", userDisplayString: "No tracks found for this user.", swiftError: error)
+                    completion(progress,cbError)
                     return
                 }
                 
@@ -182,13 +196,14 @@ class APIClient {
                 if (totalPages == currentPage) {
                     completion(newProgress, nil)
                 } else {
-                    self.getRecentTracksRecursive(startDate, to: endDate, currentPage: currentPage + 1, progress: newProgress) { (finalProgress, nil) in
+                    self.getRecentTracksRecursive(startDate, to: endDate, username: username, currentPage: currentPage + 1, progress: newProgress) { (finalProgress, nil) in
                         completion(finalProgress, nil)
                     }
                 }
                 
             } catch {
-                completion(progress, error.localizedDescription)
+                let cbError = CBError(debugString: "Exception in json data handling", userDisplayString: "There was a problem loading tracks for this user.", swiftError: error)
+                completion(progress,cbError)
             }
         }
         
