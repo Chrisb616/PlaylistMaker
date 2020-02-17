@@ -38,6 +38,8 @@
 		139929A923E4AC4400BE336B /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929A823E4AC4400BE336B /* UserListViewController.swift */; };
 		139929AB23E4AEF500BE336B /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */; };
 		139929AD23E4AF9A00BE336B /* AddUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */; };
+		13B424F623FAF3B800FB451E /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B424F523FAF3B800FB451E /* PlaylistViewController.swift */; };
+		13B424F823FAF47000FB451E /* PlaylistTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B424F723FAF47000FB451E /* PlaylistTrackTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		139929A823E4AC4400BE336B /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		139929AA23E4AEF500BE336B /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsernameViewController.swift; sourceTree = "<group>"; };
+		13B424F523FAF3B800FB451E /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		13B424F723FAF47000FB451E /* PlaylistTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrackTableViewCell.swift; sourceTree = "<group>"; };
 		5B5C57AADB3F009453F77A20 /* Pods_PlaylistMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaylistMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ED98583EF8C0B58434D923 /* Pods-PlaylistMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaylistMaker.debug.xcconfig"; path = "Target Support Files/Pods-PlaylistMaker/Pods-PlaylistMaker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +194,8 @@
 				139929AC23E4AF9A00BE336B /* AddUsernameViewController.swift */,
 				135F5C6923E872BA006B4A0B /* AppInfoViewController.swift */,
 				136098E323F5DE45008E426A /* CreateBetweenTwoPlaylistViewController.swift */,
+				13B424F523FAF3B800FB451E /* PlaylistViewController.swift */,
+				13B424F723FAF47000FB451E /* PlaylistTrackTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -342,7 +348,9 @@
 				135F5C7123E9E724006B4A0B /* Playlist.swift in Sources */,
 				1358169E23E0672F00109133 /* Date.swift in Sources */,
 				1358168D23E0661D00109133 /* Keys.swift in Sources */,
+				13B424F623FAF3B800FB451E /* PlaylistViewController.swift in Sources */,
 				1358169623E066B000109133 /* Track.swift in Sources */,
+				13B424F823FAF47000FB451E /* PlaylistTrackTableViewCell.swift in Sources */,
 				1370181423E33D74002701BF /* Catalog.swift in Sources */,
 				138A5B8F23E492B200527D50 /* UserMenuViewController.swift in Sources */,
 				139929AB23E4AEF500BE336B /* UserListTableViewCell.swift in Sources */,

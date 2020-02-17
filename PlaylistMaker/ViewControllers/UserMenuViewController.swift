@@ -60,6 +60,13 @@ class UserMenuViewController: UIViewController {
             
             destination.delegate = self
         }
+        if segue.identifier == "viewPlaylist" {
+            guard let destination = segue.destination as? PlaylistViewController, let row = tableView.indexPathForSelectedRow?.row else {
+                return
+            }
+            
+            destination.playlist = playlists[row]
+        }
     }
 }
 
