@@ -98,7 +98,6 @@ class ScrobblesService {
                 }
             }
         }
-        
     }
     
     func allTracksForDateRange(startYear: Int, startMonth: Int, startDay: Int, endYear: Int, endMonth: Int, endDay: Int, username: String, completion: @escaping ([Track], String?)->()) {
@@ -132,5 +131,4 @@ class ScrobblesService {
             completion(allTracks, nil)
         }
     }
-    
 }

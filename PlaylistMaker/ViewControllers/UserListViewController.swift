@@ -51,7 +51,6 @@ class UserListViewController: UIViewController {
             destinationViewController.user = user
         }
     }
-    
 }
 
 extension UserListViewController: UITableViewDataSource {
@@ -94,7 +93,6 @@ extension UserListViewController: UITableViewDataSource {
         
         return cell
     }
-    
 }
 
 extension UserListViewController: UITableViewDelegate {

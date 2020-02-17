@@ -71,5 +71,4 @@ extension Date {
             return (self.year - date.year) * 12 + (self.month - date.month - 1)
         }
     }
-    
 }

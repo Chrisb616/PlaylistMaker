@@ -25,5 +25,4 @@ class AppInfoViewController: UIViewController {
             versionLabel.text = "version unknown"
         }
     }
-
 }

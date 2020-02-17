@@ -108,7 +108,6 @@ class APIClient {
         task.resume()
     }
     
-    
     func getRecentTracksfrom(_ startDate: Date, to endDate: Date, username: String, completion: @escaping ([RecentTracksResponse],CBError?)->()) {
         getRecentTracksRecursive(startDate, to: endDate, username: username, currentPage: 1, progress: []) { (responses, error) in
             completion(responses,error)

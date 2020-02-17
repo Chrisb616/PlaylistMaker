@@ -22,5 +22,4 @@ class PlaylistTrack: Object {
     @objc dynamic var trackName: String?
     @objc dynamic var artistName: String?
     @objc dynamic var albumName: String?
-    
 }

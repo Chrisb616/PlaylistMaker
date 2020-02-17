@@ -61,7 +61,6 @@ class UserMenuViewController: UIViewController {
             destination.delegate = self
         }
     }
-    
 }
 
 extension UserMenuViewController: UITableViewDataSource {
@@ -79,6 +78,4 @@ extension UserMenuViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
-    
 }
