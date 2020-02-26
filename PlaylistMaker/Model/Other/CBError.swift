@@ -6,7 +6,7 @@
 //  Copyright © 2020 Christopher Boynton. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  Custom error class for handling errors within this application.
@@ -20,5 +20,16 @@ struct CBError {
         self.debugString = debugString
         self.userDisplayString = userDisplayString
         self.swiftError = swiftError
+    }
+    
+    func displayAlert(onViewController viewController: UIViewController) {
+        print("CBERROR: \(debugString ?? "No Debug String")")
+        
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Something went wrong...", message: self.userDisplayString ?? "Please Try Again", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            viewController.present(alert, animated: true, completion: nil)
+        }
     }
 }
