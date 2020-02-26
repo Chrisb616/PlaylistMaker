@@ -14,20 +14,16 @@ class UserService {
     
     var user: User?
     
-    func loadInformationFor(username: String, completion: @escaping (User?)->()) {
-        APIClient.instance.getInfoFor(username: username) { (response, errorString) in
-            if let errorString = errorString {
-                print(errorString)
-            }
-            
+    func loadInformationFor(username: String, completion: @escaping (User?, CBError?)->()) {
+        APIClient.instance.getInfoFor(username: username) { (response, error) in
             guard let response = response else {
-                completion(nil)
+                completion(nil, error)
                 return
             }
             
             self.user = response.user
             
-            completion(response.user)
+            completion(response.user, error)
         }
     }
     

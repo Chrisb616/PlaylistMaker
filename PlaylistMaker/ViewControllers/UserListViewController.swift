@@ -27,7 +27,7 @@ class UserListViewController: UIViewController {
         let usernames = UserService.instance.retrieveStoredUsernames()
         
         usernames.forEach { (username) in
-            UserService.instance.loadInformationFor(username: username) { (user) in
+            UserService.instance.loadInformationFor(username: username) { (user, error) in
                 guard let user = user else { print("Failed to load user \(username)") ;return }
                 
                 self.users.append(user)
@@ -65,8 +65,13 @@ extension UserListViewController: UITableViewDataSource {
             return
         }
         
-        UserService.instance.loadInformationFor(username: username) { (user) in
-            guard let user = user else { print("Failed to load user") ;return }
+        UserService.instance.loadInformationFor(username: username) { (user, error) in
+            
+            if let error = error {
+                error.displayAlert(onViewController: self)
+            }
+            
+            guard let user = user else { print("Failed to load user"); return }
             
             UserService.instance.save(username: username)
             self.users.append(user)
