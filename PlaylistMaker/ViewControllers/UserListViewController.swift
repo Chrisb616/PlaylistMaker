@@ -57,6 +57,8 @@ extension UserListViewController: UITableViewDataSource {
     
     func loadNewUser(withUsername username: String) {
         
+        if username == "" { return }
+        
         if self.users.contains(where: { $0.name.lowercased() == username.lowercased() }) {
             let alert = UIAlertController(title: nil, message: "\(username.lowercased()) already exists in the user list.", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel) { (action) in alert.dismiss(animated: true, completion: nil) }
