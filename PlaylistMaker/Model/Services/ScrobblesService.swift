@@ -111,14 +111,14 @@ class ScrobblesService {
             return
         }
         
-        allTracksForDateRange(startDate: startDate, endDate: endDate, username: username) { (tracks, errorString) in
-            completion(tracks, errorString)
+        allTracksForDateRange(startDate: startDate, endDate: endDate, username: username) { (tracks, error) in
+            completion(tracks, error)
         }
     }
     
     func allTracksForDateRange(startDate: Date, endDate: Date, username: String, completion: @escaping ([Track], CBError?)->()) {
         
-        APIClient.instance.getRecentTracksfrom(startDate, to: endDate, username: username) { (responses, errorString) in
+        APIClient.instance.getRecentTracksfrom(startDate, to: endDate, username: username) { (responses, error) in
             
             var allTracks = [Track]()
             
