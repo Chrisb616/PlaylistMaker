@@ -13,8 +13,8 @@ class PlaylistService {
     static let instance = PlaylistService()
     private init() { }
     
-    func createPlaylistForTimeRange(starting startDate: Date, ending endDate: Date, username: String, playlistName: String, completion: @escaping (Playlist)->()) {
-        ScrobblesService.instance.allTracksForDateRange(startDate: startDate, endDate: endDate, username: username) { (scrobbles, errorString) in
+    func createPlaylistForTimeRange(starting startDate: Date, ending endDate: Date, username: String, playlistName: String, completion: @escaping (Playlist?, CBError?)->()) {
+        ScrobblesService.instance.allTracksForDateRange(startDate: startDate, endDate: endDate, username: username) { (scrobbles, error) in
             let catalog = Catalog(scrobbles: scrobbles)
             
             let topTen = Array(catalog.topTracks[0...9]).map { (track) -> PlaylistTrack in
@@ -29,7 +29,7 @@ class PlaylistService {
             playlist.tracks = List<PlaylistTrack>()
             playlist.tracks.append(objectsIn: topTen)
             
-            completion(playlist)
+            completion(playlist, nil)
         }
     }
 }

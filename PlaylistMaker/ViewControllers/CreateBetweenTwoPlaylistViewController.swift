@@ -27,7 +27,8 @@ class CreateBetweenTwoPlaylistViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
         
-        PlaylistService.instance.createPlaylistForTimeRange(starting: startDate, ending: endDate, username: username, playlistName: playlistName) { (playlist) in
+        PlaylistService.instance.createPlaylistForTimeRange(starting: startDate, ending: endDate, username: username, playlistName: playlistName) { (playlist, error) in
+            
             
             guard let delegate = self.delegate else {
                 print("FAILURE: Delegate has been unloaded")
@@ -47,8 +48,8 @@ class CreateBetweenTwoPlaylistViewController: UIViewController {
         startDatePicker.minimumDate = Date.fromComponents(year: 2002, month: 3, day: 20, hour: 0, minute: 0, second: 0)
         endDatePicker.minimumDate = Date.fromComponents(year: 2002, month: 3, day: 20, hour: 0, minute: 0, second: 0)
         
-        startDatePicker.maximumDate = Date()
-        endDatePicker.maximumDate = Date()
+        startDatePicker.maximumDate = Date.fromComponents(year: Date().year, month: 12, day: 31, hour: 0, minute: 0, second: 0)
+        endDatePicker.maximumDate = Date.fromComponents(year: Date().year, month: 12, day: 31, hour: 0, minute: 0, second: 0)
     }
     
     func nameForPlaylist(withStartDate startDate: Date, endDate: Date) -> String {
