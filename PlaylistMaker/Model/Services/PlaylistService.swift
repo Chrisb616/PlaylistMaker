@@ -17,6 +17,12 @@ class PlaylistService {
         ScrobblesService.instance.allTracksForDateRange(startDate: startDate, endDate: endDate, username: username) { (scrobbles, error) in
             let catalog = Catalog(scrobbles: scrobbles)
             
+            guard catalog.topTracks.count >= 10 else {
+                let error = CBError(debugString: "Only \(catalog.topTracks.count) found for time range", userDisplayString: "Not enough play information for this time period.")
+                completion(nil, error)
+                return
+            }
+            
             let topTen = Array(catalog.topTracks[0...9]).map { (track) -> PlaylistTrack in
                 let playlistTrack = PlaylistTrack()
                 playlistTrack.trackName = track.trackName

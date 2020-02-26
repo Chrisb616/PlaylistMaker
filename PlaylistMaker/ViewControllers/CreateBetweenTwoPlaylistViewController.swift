@@ -35,6 +35,18 @@ class CreateBetweenTwoPlaylistViewController: UIViewController {
                 return
             }
             
+            if let error = error {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "There was an issue...", message: error.userDisplayString, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    delegate.present(alert, animated: true, completion: nil)
+                }
+            }
+            
+            guard let playlist = playlist else {
+                return
+            }
+            
             DispatchQueue.main.async {
                 delegate.playlists.append(playlist)
                 delegate.tableView.reloadData()
