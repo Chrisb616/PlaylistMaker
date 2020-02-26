@@ -26,7 +26,7 @@ struct CBError {
         print("CBERROR: \(debugString ?? "No Debug String")")
         
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Something went wrong...", message: self.userDisplayString ?? "Please Try Again", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Something went wrong...", message: self.userDisplayString ?? "Something went wrong. Try that again.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             
             viewController.present(alert, animated: true, completion: nil)
